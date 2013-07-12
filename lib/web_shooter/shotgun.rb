@@ -8,7 +8,7 @@ module WebShooter
     attr_reader :url, :driver, :file_name, :size, :format
     attr_accessor :data
 
-    def initialize(url, format = :jpg, width = 1280, height = 100)
+    def initialize(url, format = :png, width = 1280, height = 600)
       @url    = "http://" + url
       @format = format.to_s
       @size   = { width: width,

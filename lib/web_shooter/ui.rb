@@ -33,7 +33,7 @@ module WebShooter
     get '/webshot/:url/?:width?/?:height?' do
       arr = params[:url].split('.')
       response_format, domain = arr.pop, arr.join('.')
-      format = response_format == 'json' ? 'jpg' : response_format
+      format = response_format == 'json' ? 'png' : response_format
       shotgun = Shotgun.new(domain, format, params[:width]||1280, params[:height]||100)
       file = shotgun.file_name
       data = if File.exists?(file)

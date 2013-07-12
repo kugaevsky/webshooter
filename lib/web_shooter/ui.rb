@@ -46,9 +46,9 @@ module WebShooter
         content_type :json
         { image: shotgun.to_base64 }.to_json
       when 'jpg'
-        send_file file
+        redirect "/#{File.basename(file)}"
       when 'png'
-        send_file file
+        redirect "/#{File.basename(file)}"
       end
     end
   end

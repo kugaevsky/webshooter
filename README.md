@@ -23,7 +23,7 @@ Response will contain image of `http://google.com` rendered by `webkit` with `80
 
 ## Demo
 
-[Take a look](http://webshooter.kugaevsky.ru/webshot/github.com/1600/1200)
+[Take a look](http://webshooter.kugaevsky.ru/webshot/github.com.png/1600/1200)
 
 ## Contributing
 

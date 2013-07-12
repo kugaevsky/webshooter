@@ -1,6 +1,5 @@
 require 'sinatra/base'
 
-
 module WebShooter
   class UI < Sinatra::Base
 

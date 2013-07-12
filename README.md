@@ -15,15 +15,15 @@ Response will contain image of `http://google.com` rendered by `webkit` with `80
 
 ### Options
 
-* **format** – [png|jpg|json]
+* **format** – `png`, `jpg`, `json`
     * **png**   – for good quality
     * **jpg**   – for slow bandwith
-    * **json**  – response contains base64 encoded image `{"image":"/9j/4AAQSkZJRgABAQEASABIAAD/..."`
+    * **json**  – response contains base64 encoded image `{"image":"/9j/4AAQSkZJRgABAQEASABIAAD/..."}`
 
 
 ## Demo
 
-[Take a look](http://webshooter.kugaevsky.ru)
+[Take a look](http://webshooter.kugaevsky.ru/webshot/github.com/1600/1200)
 
 ## Contributing
 

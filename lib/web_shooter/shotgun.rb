@@ -1,5 +1,3 @@
-require 'capybara'
-require 'capybara-webkit'
 require 'base64'
 
 module WebShooter
@@ -17,7 +15,7 @@ module WebShooter
     end
 
     def save_screenshot
-      @driver ||= ::Capybara::Webkit::Driver.new('http://google.com')
+      @driver ||= WebKit.driver
       @driver.visit url
       @driver.save_screenshot file_name, size
     end

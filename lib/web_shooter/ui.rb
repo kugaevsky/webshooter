@@ -25,8 +25,14 @@ module WebShooter
     # Turn on logging and set log level to dedug for development environment
     set :logging, false
 
+    enable :inline_templates
+
     configure :development do
       set :logging, true
+    end
+
+    get '/' do
+      slim :index
     end
 
     get '/webshot/:url/?:width?/?:height?' do
@@ -35,11 +41,7 @@ module WebShooter
       format = response_format == 'json' ? 'png' : response_format
       shotgun = Shotgun.new(domain, format, params[:width]||1280, params[:height]||100)
       file = shotgun.file_name
-      data = if File.exists?(file)
-        shotgun.read
-      else
-        shotgun.shoot
-      end
+      data = shotgun.shoot
       case response_format
       when 'json'
         content_type :json
@@ -52,3 +54,25 @@ module WebShooter
     end
   end
 end
+
+__END__
+
+@@ layout
+html
+  head
+    title WebShooter
+  body
+    == yield
+
+@@ index
+br
+br
+br
+p Proof of concept only.
+p No UI available.
+p
+  | Just send GET request to `/webshot/domain.tld.format` for example:
+  ul
+    li: a< href="/webshot/yandex.ru.png" = "/webshot/yandex.ru.png"
+    li: a< href="/webshot/yandex.ru.json" = "/webshot/yandex.ru.json"
+p Enjoy!

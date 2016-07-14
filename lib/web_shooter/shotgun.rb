@@ -17,7 +17,7 @@ module WebShooter
     def save_screenshot
       @driver ||= WebKit.driver
       @driver.visit url
-      @driver.save_screenshot file_name, size
+      @driver.save_screenshot file_name, full: true
     end
 
     def read
